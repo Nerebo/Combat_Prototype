@@ -47,7 +47,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_vev8b"]
 resource_name = "attack"
-length = 0.9
+length = 0.96
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -299,17 +299,16 @@ _data = {
 "walk_l": SubResource("Animation_tl2c3")
 }
 
-[node name="main_character" type="CharacterBody2D"]
+[node name="main_character" type="CharacterBody2D" groups=["Personagem"]]
 position = Vector2(-1, 0)
 script = ExtResource("1_ow8mq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_xqgiq")
 
 [node name="Soldier" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -6)
 texture = ExtResource("2_o5j17")
 hframes = 9
 vframes = 7
@@ -318,3 +317,9 @@ vframes = 7
 libraries = {
 "": SubResource("AnimationLibrary_sqqvj")
 }
+
+[node name="Attack_Timer" type="Timer" parent="."]
+wait_time = 0.96
+one_shot = true
+
+[connection signal="timeout" from="Attack_Timer" to="." method="_on_attack_timer_timeout"]
