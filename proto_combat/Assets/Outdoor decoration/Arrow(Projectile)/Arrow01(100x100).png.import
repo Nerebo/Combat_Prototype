@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv7kovfoujnlu"
-path="res://.godot/imported/Oak_Tree.png-e653e831963eb5048cf918c3402b0d78.ctex"
+uid="uid://cpk1f6p3dvg7e"
+path="res://.godot/imported/Arrow01(100x100).png-c14a48e8b128463669e3b7b698ec3eb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Terrain/Outdoor decoration/Oak_Tree.png"
-dest_files=["res://.godot/imported/Oak_Tree.png-e653e831963eb5048cf918c3402b0d78.ctex"]
+source_file="res://Assets/Outdoor decoration/Arrow(Projectile)/Arrow01(100x100).png"
+dest_files=["res://.godot/imported/Arrow01(100x100).png-c14a48e8b128463669e3b7b698ec3eb0.ctex"]
 
 [params]
 

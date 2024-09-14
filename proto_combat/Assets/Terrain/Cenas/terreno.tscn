@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drcku0sd6dims"]
+[gd_scene load_steps=8 format=3 uid="uid://drcku0sd6dims"]
 
 [ext_resource type="Texture2D" uid="uid://dww7rs0e6ggxx" path="res://Assets/Terrain/Tiles/Cliff_Tile.png" id="1_246jt"]
 [ext_resource type="Texture2D" uid="uid://sh332x7exb06" path="res://Assets/Terrain/Tiles/Grass_Middle.png" id="2_uaipt"]
@@ -164,12 +164,6 @@ sources/0 = SubResource("TileSetAtlasSource_k0duc")
 sources/2 = SubResource("TileSetAtlasSource_uqtjn")
 sources/3 = SubResource("TileSetAtlasSource_jkiqk")
 
-[sub_resource type="TileSet" id="TileSet_rjcec"]
-
 [node name="Terreno" type="TileMap"]
 tile_set = SubResource("TileSet_vj6f1")
 format = 2
-layer_0/tile_data = PackedInt32Array(196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 589825, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 589829, 0, 0, 589830, 0, 0)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_set = SubResource("TileSet_rjcec")

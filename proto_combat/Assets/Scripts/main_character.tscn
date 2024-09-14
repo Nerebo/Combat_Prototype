@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://21nbd34d0q5i"]
+[gd_scene load_steps=13 format=3 uid="uid://21nbd34d0q5i"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/main_character.gd" id="1_ow8mq"]
 [ext_resource type="Texture2D" uid="uid://ejv6it715a6y" path="res://Assets/Character/Soldado/Soldier.png" id="2_o5j17"]
@@ -123,6 +123,34 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [36, 37, 38, 39, 40, 41, 42, 43, 44]
+}
+
+[sub_resource type="Animation" id="Animation_c2ecj"]
+resource_name = "death"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Soldier:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [54, 55, 56, 57]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Soldier:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_l7lvj"]
@@ -293,6 +321,7 @@ _data = {
 "RESET": SubResource("Animation_b00n5"),
 "attack": SubResource("Animation_vev8b"),
 "attack_l": SubResource("Animation_shwh2"),
+"death": SubResource("Animation_c2ecj"),
 "idle": SubResource("Animation_l7lvj"),
 "idle_l": SubResource("Animation_u4url"),
 "walk": SubResource("Animation_h7kbr"),
@@ -322,4 +351,13 @@ libraries = {
 wait_time = 0.96
 one_shot = true
 
+[node name="Death_Timer" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_smoothed = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
 [connection signal="timeout" from="Attack_Timer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Death_Timer" to="." method="_on_death_timer_timeout"]

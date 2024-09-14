@@ -18,6 +18,3 @@ scale = Vector2(0.997841, 1.0014)
 
 [node name="Slime" parent="." instance=ExtResource("3_nb7op")]
 position = Vector2(251.634, 117.714)
-
-[node name="Slime2" parent="." instance=ExtResource("3_nb7op")]
-position = Vector2(216.823, 0)
