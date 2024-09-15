@@ -47,6 +47,8 @@ func _process(delta: float):
 				return
 		else:
 			set_physics_process(false)
+	else:
+		set_physics_process(false)
 	
 func move():
 	var direcao: Vector2 = Vector2(Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down"))
@@ -58,6 +60,7 @@ func _die():
 	$Death_Timer.start()
 	animation.play("death")
 	set_physics_process(false)
+
 
 func _on_attack_timer_timeout() -> void:
 	var arrow_instance = arrow.instantiate()
