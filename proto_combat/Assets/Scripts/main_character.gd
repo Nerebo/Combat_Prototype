@@ -52,7 +52,6 @@ func _process(delta: float):
 	
 func move():
 	var direcao: Vector2 = Vector2(Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down"))
-	
 	velocity = direcao.normalized() * move_speed
 	move_and_slide()
 
@@ -72,4 +71,4 @@ func _on_attack_timer_timeout() -> void:
 
 
 func _on_death_timer_timeout() -> void:
-	pass
+	get_tree().change_scene_to_file("res://Assets/Scripts/game_over.tscn")

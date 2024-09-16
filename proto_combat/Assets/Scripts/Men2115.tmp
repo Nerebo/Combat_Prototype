@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpknjmsska464"]
+[gd_scene load_steps=10 format=3 uid="uid://cpknjmsska464"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/menu.gd" id="1_qjd75"]
-[ext_resource type="FontFile" uid="uid://b8wmf4s100tnp" path="res://Assets/Font/BLKCHCRY.TTF" id="2_lfs7e"]
-[ext_resource type="Texture2D" uid="uid://dv5ydbsv4nt40" path="res://Logo-Proto.png" id="4_4ioac"]
-[ext_resource type="Script" path="res://Assets/Scripts/parallax_background.gd" id="4_kj3te"]
+[ext_resource type="FontFile" uid="uid://qr0wrlhto5aq" path="res://Assets/Font/not-jam-slab-serif-11-zip/NotJamSlabSerif11/NotJamSlabSerif11.ttf" id="2_od81s"]
+[ext_resource type="FontFile" uid="uid://cvf45fdrynce1" path="res://Assets/Font/not-jam-slab-serif-11-zip/NotJamSlabSerif11/NotJamSlab14.ttf" id="3_hjfn2"]
 [ext_resource type="Texture2D" uid="uid://btxainp0um2y6" path="res://Assets/Parallax/NightForest/Layers/1.png" id="4_yr55i"]
 [ext_resource type="Texture2D" uid="uid://btilwbkps1a73" path="res://Assets/Parallax/NightForest/Layers/2.png" id="5_aqa26"]
 [ext_resource type="Texture2D" uid="uid://cojxt74g8u0hw" path="res://Assets/Parallax/NightForest/Layers/3.png" id="6_n5pt0"]
@@ -28,7 +27,7 @@ offset_right = 50.0
 offset_bottom = 145.0
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
-theme_override_fonts/font = ExtResource("2_lfs7e")
+theme_override_fonts/font = ExtResource("2_od81s")
 theme_override_font_sizes/font_size = 10
 text = "Jogar"
 flat = true
@@ -41,7 +40,7 @@ offset_right = 46.0
 offset_bottom = 163.0
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
-theme_override_fonts/font = ExtResource("2_lfs7e")
+theme_override_fonts/font = ExtResource("2_od81s")
 theme_override_font_sizes/font_size = 10
 text = "Ajuda"
 flat = true
@@ -54,19 +53,14 @@ offset_right = 48.0
 offset_bottom = 178.0
 theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
-theme_override_fonts/font = ExtResource("2_lfs7e")
+theme_override_fonts/font = ExtResource("3_hjfn2")
 theme_override_font_sizes/font_size = 12
 text = "Quit"
 flat = true
 alignment = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(159, 101)
-scale = Vector2(0.38, 0.38)
-texture = ExtResource("4_4ioac")
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-script = ExtResource("4_kj3te")
+script = ExtResource("1_qjd75")
 
 [node name="ParallaxLayer_1" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(309, 58)

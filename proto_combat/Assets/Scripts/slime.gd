@@ -8,7 +8,11 @@ var health: int = 2
 @export_category("Objects")
 @export var _texture: Sprite2D = null
 @export var _animation: AnimationPlayer = null
+@onready var hp_bar = $HP
 
+func _on_ready():
+	hp_bar.value = health
+	
 func _on_detection_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Personagem"):
 		player_ref = body
@@ -45,6 +49,7 @@ func update_health(damage):
 	print("health: ", health)
 	print("damage: ", damage)
 	health = health - damage
+	hp_bar.value = health
 	if(health == 0):
 		is_dead = true
 		animation.play("death")

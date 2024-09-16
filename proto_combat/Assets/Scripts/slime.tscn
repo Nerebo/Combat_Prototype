@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dli5bvwl1cfh5"]
+[gd_scene load_steps=12 format=3 uid="uid://dli5bvwl1cfh5"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/slime.gd" id="1_kwu56"]
 [ext_resource type="Texture2D" uid="uid://ks8snfd0hsb" path="res://Assets/Enemies/Slime.png" id="2_pu8ft"]
@@ -128,7 +128,13 @@ _data = {
 radius = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t4pfp"]
-radius = 135.004
+radius = 317.309
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3luay"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8h3h"]
+bg_color = Color(0, 1, 0, 1)
 
 [node name="Slime" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_kwu56")
@@ -155,6 +161,17 @@ position = Vector2(1, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
 shape = SubResource("CircleShape2D_t4pfp")
+
+[node name="HP" type="ProgressBar" parent="."]
+offset_left = -27.0
+offset_top = -18.0
+offset_right = 28.0
+offset_bottom = -12.0
+theme_override_styles/background = SubResource("StyleBoxFlat_3luay")
+theme_override_styles/fill = SubResource("StyleBoxFlat_e8h3h")
+max_value = 2.0
+value = 2.0
+show_percentage = false
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
